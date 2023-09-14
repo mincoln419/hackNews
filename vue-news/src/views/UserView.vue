@@ -1,21 +1,25 @@
 <template>
     <div>
-    <div v-bind:key="user.id" v-for="user in users">{{ user.title }}</div>
-  </div>
+        <p>name: {{ userInfo.id }}</p>
+        <p>karma: {{ userInfo.karma }}</p>
+        <p>created: {{ userInfo.created }}</p>
+
+
+    </div>
 </template>
 
 <script>
-import { fetchNewsList } from '../api/index.js';
+import axios from 'axios';
+
 export default {
-    data(){
-        return {
-            users: []
-        }
-    },
     created(){
-        fetchNewsList()
-        .then(response => this.users = response.data)
-        .catch(error => console.log(error));
+        const userId = this.$route.params.id;
+        this.$store.dispatch('FETCH_USER', userId);
+    },
+    computed: {
+        userInfo() {
+            return this.$store.state.user;
+        }
     }
 }
 </script>
