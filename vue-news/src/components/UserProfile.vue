@@ -4,19 +4,24 @@
           <i class="fa fa-user" aria-hidden="true"></i>
         </div>
         <div class="user-description">
-          <!-- <router-link :to="`/user/${fetchItem.user}`">
-            {{this.fetchItem.user}}
-          </router-link>
+            <div>{{ userInfo.id }}</div>
+          <!-- <router-link :to="`/user/${userInfo.user}`">
+            {{userInfo.user}}
+          </router-link> -->
           <div class="time">
-            {{this.fetchItem.time_ago}}
-          </div> -->
+            {{userInfo.created}}
+          </div>
         </div>
       </div>
 </template>
 
 <script>
 export default {
-
+    computed: {
+        userInfo() {
+            return this.$store.state.user;
+        }
+    }
 }
 </script>
 
