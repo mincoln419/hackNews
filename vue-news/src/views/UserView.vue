@@ -1,6 +1,16 @@
 <template>
     <div>
-        <UserProfile></UserProfile>
+        <user-profile :info="userInfo">
+            <div slot="username">
+                {{ userInfo.id }}
+            </div>
+            <span slot="time">
+                {{ 'Joined ' +userInfo.created }}
+            </span>
+            <span slot="karma">
+                {{ userInfo.karma }}
+            </span>
+        </user-profile>
     </div>
 </template>
 
@@ -11,6 +21,11 @@ import UserProfile from '@/components/UserProfile.vue';
 export default {
     components: {
         UserProfile,
+    },
+    computed:{
+        userInfo(){
+            return this.$store.state.user;
+        }
     },
     created(){
         const userId = this.$route.params.id;

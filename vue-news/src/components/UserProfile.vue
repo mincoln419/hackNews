@@ -4,24 +4,25 @@
           <i class="fa fa-user" aria-hidden="true"></i>
         </div>
         <div class="user-description">
-            <div>{{ userInfo.id }}</div>
-          <!-- <router-link :to="`/user/${userInfo.user}`">
-            {{userInfo.user}}
-          </router-link> -->
-          <div class="time">
-            {{userInfo.created}}
-          </div>
+            <slot name="username"></slot>
+            <div class="time">
+                <slot name="time"></slot>
+                <slot name="karma"></slot>
+            </div>
         </div>
       </div>
 </template>
 
 <script>
 export default {
-    computed: {
-        userInfo() {
-            return this.$store.state.user;
-        }
-    }
+    props: {
+        info: Object
+    }, 
+    // computed: {
+    //     userInfo() {
+    //         return this.$store.state.user;
+    //     }
+    // }
 }
 </script>
 
