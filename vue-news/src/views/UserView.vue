@@ -7,9 +7,9 @@
             <span slot="time">
                 {{ 'Joined ' +userInfo.created }}
             </span>
-            <span slot="karma">
+            <div slot="karma">
                 {{ userInfo.karma }}
-            </span>
+            </div>
         </user-profile>
     </div>
 </template>

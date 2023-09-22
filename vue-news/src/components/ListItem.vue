@@ -25,22 +25,12 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
 export default {
   computed:{
     fetchedItems(){
-        const name = this.$route.name;
-        switch(name){
-            case 'news':
-                return this.$store.state.newses;
-            case 'ask':
-                return this.$store.state.asks;
-            case 'jobs':
-                return this.$store.state.jobs;
-            default: return '';
-            }
-        }
+        return this.$store.state.list;
     }
+  }
 }
 </script>
 
