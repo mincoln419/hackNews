@@ -27,22 +27,6 @@
 <script>
 import {mapGetters} from 'vuex';
 export default {
-  created() {
-    const name = this.$route.name;
-    
-    switch(name){
-        case 'news':
-            this.$store.dispatch('FETCH_NEWS');
-            break;
-        case 'ask':
-            this.$store.dispatch('FETCH_ASKS');
-            break;
-        case 'jobs':
-            this.$store.dispatch('FETCH_JOBS');
-            break;
-        default: break;
-    }
-  },
   computed:{
     fetchedItems(){
         const name = this.$route.name;

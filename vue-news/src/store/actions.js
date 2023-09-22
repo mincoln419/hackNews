@@ -4,8 +4,8 @@ export default {
     FETCH_NEWS(context) {
         fetchNewsList()
             .then(response => {
-                console.log(response.data);
                 context.commit('SET_NEWS', response.data);
+                return response;
             })
             .catch(function () {
                 console.log(" error callback");
@@ -14,7 +14,6 @@ export default {
     FETCH_JOBS(context) {
         fetchJobsList()
             .then(({data}) =>{
-                console.log(data);
                 context.commit('SET_JOBS', data);
             })
             .catch(function () {
@@ -24,7 +23,6 @@ export default {
     FETCH_ASKS(context) {
         fetchAsksList()
             .then(({data}) =>{
-                console.log(data);
                 context.commit('SET_ASKS', data);
             })
             .catch(function () {
@@ -34,7 +32,6 @@ export default {
     FETCH_USER(context, userId) {
         fetchUserInfo(userId)
             .then(({data}) =>{
-                console.log(data);
                 context.commit('SET_USER', data);
             })
             .catch(function () {
@@ -44,7 +41,6 @@ export default {
     FETCH_ITEM(context, itemId){
         fetchItemInfo(itemId)
             .then(({data}) =>{
-                console.log(data);
                 context.commit('SET_ITEM', data);
             })
             .catch(function () {
