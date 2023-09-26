@@ -11,7 +11,7 @@ Vue.use(VueRouter);
 const apiCall = async (to, from, next) => {
     bus.$emit('start:spinner');
     const data  = await store.dispatch('FETCH_LIST', to.name);
-    if(data !=null){
+    if(data != null){
        next();
     }
     
