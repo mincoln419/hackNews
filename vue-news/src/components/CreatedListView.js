@@ -8,15 +8,15 @@ export default function createListView(name) {
         created() {
             bus.$emit('start:spinner');
               setTimeout(() => {
-                this.$store.dispatch('FETCH_LIST', this.$route.name)
-              .then(() => {
                 console.log("fetched");
+                this.$store.dispatch('FETCH_LIST', this.$route.name)
+              .then(() => {                
                 bus.$emit('end:spinner');
               })
               .catch((error) => {
                 console.log(error);
               });
-            },1000);
+            },100);
           },
         render(createElement) {
             return createElement(ListView);
