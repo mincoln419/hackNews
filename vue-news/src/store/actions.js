@@ -1,7 +1,7 @@
 import { fetchNewsList, fetchJobsList, fetchAsksList, fetchUserInfo, fetchItemInfo, fetchList } from '../api/index.js';
 
 export default {
-    FETCH_USER(context, userId) {
+    async FETCH_USER(context, userId) {
         try{
             const { data } = await fetchUserInfo(userId);
             context.commit('SET_USER', data);
@@ -10,7 +10,7 @@ export default {
             console.log(error);
         }
     }, 
-    FETCH_ITEM(context, itemId){
+    async FETCH_ITEM(context, itemId){
         try{
             const { data } = await fetchItemInfo(itemId);
             context.commit('SET_ITEM', data);
@@ -19,7 +19,7 @@ export default {
             console.log(error);
         }        
     },
-    FETCH_LIST(context, pageName){
+    async FETCH_LIST(context, pageName){
         try{
             const { data } = await fetchList(pageName);
             context.commit('SET_LIST', data);
