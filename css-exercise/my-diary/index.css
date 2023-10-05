@@ -1,0 +1,37 @@
+.container {
+    background-color: grey;
+}
+
+.container .wrapper {    
+    box-sizing: border-box;
+    background-color: rgb(245, 239, 239);
+    border: 3px solid darkgrey;
+    margin: 100px; 
+}
+
+.wrapper__head .wrapper__head__title{
+    background-color: orange;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 20px;    
+}
+
+.wrapper__head__sub-title {
+    margin: 20px;
+    padding-bottom: 20px;
+    border-bottom: dotted 3px black;
+}
+.wrapper__head__sub-title span{
+    color:rgb(221, 161, 72);
+    text-decoration: underline;
+    font-weight: 600;
+    display: block;
+    padding-top: 10px;
+}
+
+
+.wrapper__body {    
+    margin: 20px;
+    border: solid 3px grey;
+}
