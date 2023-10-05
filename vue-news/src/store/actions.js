@@ -1,30 +1,32 @@
 import { fetchNewsList, fetchJobsList, fetchAsksList, fetchUserInfo, fetchItemInfo, fetchList } from '../api/index.js';
 
 export default {
-    FETCH_USER(context, userId) {
-        fetchUserInfo(userId)
-            .then(({data}) =>{
-                context.commit('SET_USER', data);
-            })
-            .catch(function () {
-                console.log(" error callback");
-            });
+    async FETCH_USER(context, userId) {
+        try{
+            const { data } = await fetchUserInfo(userId);
+            context.commit('SET_USER', data);
+            return data;    
+        }catch(error){
+            console.log(error);
+        }
     }, 
-    FETCH_ITEM(context, itemId){
-        fetchItemInfo(itemId)
-            .then(({data}) =>{
-                context.commit('SET_ITEM', data);
-            })
-            .catch(function () {
-                console.log(" error callback");
-            });
+    async FETCH_ITEM(context, itemId){
+        try{
+            const { data } = await fetchItemInfo(itemId);
+            context.commit('SET_ITEM', data);
+            return data;
+        }catch(error){
+            console.log(error);
+        }        
     },
-    FETCH_LIST(context, pageName){
-        return fetchList(pageName).then(({data}) =>{
+    async FETCH_LIST(context, pageName){
+        try{
+            const { data } = await fetchList(pageName);
             context.commit('SET_LIST', data);
-        })
-        .catch(function () {
-            console.log(" error callback");
-        });
+            return data;
+        }catch(error){
+            console.log(error);
+        }
+        
     }
 }
