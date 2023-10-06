@@ -1,11 +1,7 @@
-* {
-    box-sizing: border-box;
-}
-
 .box{
     width: 300px;
     padding: 20px;
-    
+    box-sizing: border-box;    
 }
 
 .box1 {    
@@ -20,6 +16,6 @@
     float: right;
 }
 
-p {
+.clearfix {
     clear: both
 }

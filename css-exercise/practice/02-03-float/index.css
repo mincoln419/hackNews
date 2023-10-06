@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+.container {
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.wrapper {    
+    width: 620px;
+    background-color: rgb(245, 239, 239);
+    border: 3px solid darkgrey;
+    padding: 40px 30px;
+    border-radius: 10px;
+}
+
+.wrapper__head {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: dashed 3px grey;
+
+}
+
+.wrapper__head .wrapper__head__title{
+    background-color: orange;
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#point{
+    font-size: 18px;
+    color:rgb(221, 161, 72);
+    text-decoration: underline;
+    font-weight: 600;
+    display: block;
+    margin-top: 15px;
+}
+
+.wrapper__body {        
+    border: solid 3px lightgrey;
+}
+
+.diary-title{
+    background-color: lightgrey;
+    padding: 5px;
+    margin: 10px;
+}
+
+.wrapper__body__content p{
+    margin: 20px;
+}
+
+.kimchi{
+    color:red;
+    font-weight: 600;
+}
+
+.cheeze{
+    color:orange;
+    font-weight: 600;
+}
+
+.blue {
+    color: blue;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.footer {
+    color: lightgrey;
+    text-align: right;
+    font-size: 14px;
+}
+
+.header {
+    border-bottom: 1px solid grey;
+    padding: 5px;
+}
+
+.header-inner {
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+}
+.logo {
+    float: left;
+    width: 100px;
+    height: 80px;
+    padding-top: 17px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: orange;
+}
+
+.menu {
+    float: left;
+    width: calc(100% - 200px);
+    height: 80px;
+    text-align: center;
+}
+
+.menu ul {
+    display: inline-block;
+}
+
+.menu ul li {
+    float: left;
+    list-style: none;
+    padding: 29px 20px;
+    display: block;
+}
+
+.menu ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    color: orange;
+}
+
+.user {
+    float: left;
+    width: 100px;
+    height: 80px;
+    padding-top: 23px;
+}
+
+.clearfix{
+    clear: both;
+}
