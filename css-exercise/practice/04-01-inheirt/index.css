@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    color: blue;
+    font-size: 38px;
+    border: 1px dashed orange;
+}
+
+.inner-box, p {
+    /* border: 1px dashed orange; */
+    color: red;
+    font-size: 19px;
+}
