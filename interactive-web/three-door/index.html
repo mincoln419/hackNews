@@ -101,16 +101,27 @@
 
 			//현재 활성화된 아이템 저장
 			let currentItem;
+
+			const activate = (elem) => {
+				elem.classList.add('door-opened');
+				currentItem = elem;
+			};
+
+			const inactivate = () => {
+				currentItem.classList.remove('door-opened');
+			};
+
 			const doorHandler = (e) => {
 				const targetElem = e.target;
 
 				if(targetElem.classList.contains('door-body')){
-					if(currentItem)currentItem.classList.remove('door-opened');
-					targetElem.parentNode.classList.add('door-opened');
-					currentItem = targetElem.parentNode;
+					if(currentItem)inactivate();
+					activate(targetElem.parentNode);
 				}
 			};
 			stageElem.addEventListener('click', doorHandler);
+
+			activate(document.querySelector('.door:nth-child(2)'));
 		})();
 	</script>
 </body>
