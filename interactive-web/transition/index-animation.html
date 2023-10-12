@@ -15,10 +15,11 @@
             background: red;
             transition: 2s;
             margin: -15px 0 0 -15px;
+            /* animation: ball-ani 1s 3 alternate forwards; */
         }
 
         .ball.end {
-            background-color: dodgerblue;
+            border: 15px solid #fff000;
         }
 
         @keyframes ball-ani {
@@ -36,21 +37,22 @@
     <script>
         const ballElem = document.querySelector('.ball');
 
-        window.addEventListener('click', (e) => {
-            ballElem.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-        });
-
-        // ballElem.addEventListener('transitionend', (e) => {
-        //     ballElem.classList.add('end');
-        //     //console.log(e.elapsedTime);
-        //     console.log(e.propertyName);
-        // });
-
-        ballElem.addEventListener('transitionstart', (e) => {
+        ballElem.addEventListener('animationstart', (e) => {
             ballElem.classList.add('end');
-            //console.log(e.elapsedTime);
-            console.log(e.propertyName);
+
         });
+
+
+        ballElem.addEventListener('click', (e) => {
+            ballElem.style.animation = 'ball-ani 1s 3 alternate forwards';
+
+        });
+
+        ballElem.addEventListener('animationiteration', (e) => {
+            console.log('반복!');
+
+        });
+
     </script>
 </body>
 </html>
