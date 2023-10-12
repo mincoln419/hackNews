@@ -1,0 +1,8 @@
+.character {
+    box-sizing: border-box;
+    height: 500px;
+}
+.a {
+    height: 100px;
+    background-image: url('../../img/ilbuni_0.png');
+}
