@@ -30,6 +30,17 @@
 
     window.addEventListener('resize', resizeHandler);
 
+    stageElem.addEventListener('click', (e) => {
+        new Character(e.clientX/window.innerWidth, e.clientY/window.innerHeight);
+    });
+
+
+    const selectCharacterElem = document.querySelector('.select-character');
+    selectCharacterElem.addEventListener('click', (e) => {
+        document.body.dataset.char = e.target.dataset.char;
+    });
+
     resizeHandler();
+   
 
 })();
